@@ -1,9 +1,93 @@
-/* HEADER – ensure white text */
-.header {
-  color: white;
+:root {
+  --bg: #fafafa;
+  --ink: #111;
+  --muted: #444;
+  --line: #e8e8e8;
+  --maxw: 1080px;
+  --pad: clamp(16px, 3vw, 32px);
+  --radius: 20px;
+  --shadow: 0 12px 28px rgba(0, 0, 0, .06);
+  --t: 220ms cubic-bezier(.2, .8, .2, 1);
+  --accent: #40E0D0; /* Türkis */
 }
 
-/* DESKTOP: Add vertical padding to header */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Poppins", system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.container {
+  max-width: var(--maxw);
+  margin: auto;
+  padding-inline: var(--pad);
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background-image: url("page_assets/chessboard.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: saturate(1.2) blur(6px);
+}
+
+/* Overlay for header */
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.header .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+}
+
+.menu {
+  display: flex;
+  gap: 18px;
+}
+
+.menu a {
+  color: var(--accent);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* Header spacing for desktop */
 @media (min-width: 768px) {
   .header {
     padding-block: 40px;
@@ -14,7 +98,49 @@
   }
 }
 
-/* BASE style for both training cards */
+/* Sections */
+.section {
+  padding-block: 60px;
+}
+
+.section-header {
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Cards */
+.card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.card-media {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Special Training Cards */
 .training-card {
   background-size: cover;
   background-position: center;
@@ -25,7 +151,7 @@
   border-radius: var(--radius);
 }
 
-/* Overlay for readability */
+/* Overlay for training cards */
 .training-card::before {
   content: '';
   position: absolute;
@@ -39,12 +165,85 @@
   z-index: 1;
 }
 
-/* Card for 7–10 Jahre (uses card_1.jpeg) */
+/* Specific background images */
 .card-7-10 {
-  background-image: url("assets/card_1.jpeg");
+  background-image: url("page_assets/card_1.jpeg");
 }
 
-/* Card for 11–17 Jahre (uses card_2.jpeg) */
 .card-11-17 {
-  background-image: url("assets/card_2.jpeg");
+  background-image: url("page_assets/card_2.jpeg");
+}
+
+/* Gallery */
+.gallery-view {
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1rem;
+}
+
+.gallery-view img {
+  max-width: 100%;
+  max-height: 60vh;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+  object-fit: contain;
+  background: #fdfdfd;
+}
+
+.gallery-view .nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: rgba(0, 0, 0, .35);
+  color: #fff;
+  font-size: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.gallery-view .prev {
+  left: .5rem;
+}
+
+.gallery-view .next {
+  right: .5rem;
+}
+
+.gallery-thumbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: .75rem;
+}
+
+.gallery-thumbs button {
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: .75rem;
+  overflow: hidden;
+  background: none;
+  cursor: pointer;
+}
+
+.gallery-thumbs button[aria-current="true"] {
+  border-color: #6aa9ff;
+  box-shadow: 0 0 0 3px rgba(106, 169, 255, .25);
+}
+
+.gallery-thumbs img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 30px 0;
+  color: var(--muted);
+  font-size: 14px;
 }
