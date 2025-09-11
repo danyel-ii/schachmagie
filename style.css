@@ -85,3 +85,28 @@ body {
 
 /* Footer */
 .footer { border-top:1px solid var(--line); padding:30px 0; color:var(--muted); font-size:14px; }
+
+.training-card {
+  background-image: url("assets/chessboard.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Optional overlay for readability */
+.training-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.training-card .card-body {
+  position: relative;
+  z-index: 1;
+}
