@@ -5,6 +5,7 @@
   const BRANCH    = 'main';
 
   const GALLERY_SEL = '#gallery';
+  const GALLERY_DIR = 'assets/images/gallery';
   const ALLOWED = /\.(png|jpe?g|gif|webp|avif)$/i;
 
   const root = document.querySelector(GALLERY_SEL);
@@ -76,7 +77,7 @@
 
   // GitHub API
   async function loadFromGitHubAssets() {
-    const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/assets?ref=${encodeURIComponent(BRANCH)}`;
+    const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GALLERY_DIR}?ref=${encodeURIComponent(BRANCH)}`;
     const res = await fetch(url, { headers: { 'Accept': 'application/vnd.github.v3+json' } });
     if (!res.ok) throw new Error(`GitHub API ${res.status}`);
     const data = await res.json();
