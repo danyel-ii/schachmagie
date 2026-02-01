@@ -1,11 +1,31 @@
 // script.js
 (function () {
-  const GH_OWNER  = 'schachmagie';
-  const GH_REPO   = 'schachmagie.github.io'; 
-  const BRANCH    = 'main';
-
   const GALLERY_SEL = '#gallery';
   const GALLERY_DIR = 'assets/images/gallery';
+  const GALLERY_FILES = [
+    '00250810-Magie-Flyer.jpg',
+    '20241122-a.jpg',
+    '20241229-a.jpg',
+    '20241229-b.jpg',
+    '20241229-c.jpg',
+    '20250110-a.jpg',
+    '20250124-a.jpg',
+    '20250129-a.jpg',
+    '20250207-a.jpg',
+    '20250207-b.jpg',
+    '20250307-a.jpg',
+    '20250407-a.jpg',
+    '20250415-b.jpg',
+    '20250714-a.jpg',
+    'CafeHerzStueck.jpg',
+    'Magie-Ex-1.jpg',
+    'Magie-goes-Maerkte.jpg',
+    'Schachmagie2.jpg',
+    'placeholder_gallery1.png',
+    'placeholder_gallery2.png',
+    'placeholder_gallery3.png',
+    'z-Foto-auf-Flyer.jpg'
+  ];
   const ALLOWED = /\.(png|jpe?g|gif|webp|avif)$/i;
 
   const root = document.querySelector(GALLERY_SEL);
@@ -75,15 +95,10 @@
     root.appendChild(thumbs);
   }
 
-  // GitHub API
-  async function loadFromGitHubAssets() {
-    const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GALLERY_DIR}?ref=${encodeURIComponent(BRANCH)}`;
-    const res = await fetch(url, { headers: { 'Accept': 'application/vnd.github.v3+json' } });
-    if (!res.ok) throw new Error(`GitHub API ${res.status}`);
-    const data = await res.json();
-    return data
-      .filter(item => item && item.type === 'file' && ALLOWED.test(item.name))
-      .map(item => ({ src: item.download_url, alt: pretty(item.name) }));
+  function loadFromLocalAssets() {
+    return GALLERY_FILES
+      .filter(name => ALLOWED.test(name))
+      .map(name => ({ src: `${GALLERY_DIR}/${name}`, alt: pretty(name) }));
   }
 
   function collectExistingImgs() {
@@ -167,12 +182,8 @@
 
   // init
   (async function init() {
-    try {
-      items = await loadFromGitHubAssets();
-    } catch (e) {
-      console.warn('Falling back to inline images in HTML:', e);
-      items = collectExistingImgs();
-    }
+    items = loadFromLocalAssets();
+    if (!items.length) items = collectExistingImgs();
 
     if (!items.length) {
       root.style.display = 'none';
