@@ -3,149 +3,273 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Schach-Magie</title>
+  <title>Schach-Magie Detmold</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="page_assets/Magie-Logo-16+17-Uhr.jpg" type="image/jpeg">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="bg-shapes" aria-hidden="true">
+    <span class="shape shape-1"></span>
+    <span class="shape shape-2"></span>
+    <span class="shape shape-3"></span>
+    <span class="shape shape-4"></span>
+  </div>
 
-  <!-- Header / Nav -->
-  <header class="header">
-    <div class="container nav">
-      <div class="brand logo-placeholder">
+  <header class="site-header">
+    <div class="container nav-grid">
+      <a class="brand" href="#top">
         <img src="placeholder_logo_IG.png" alt="Schachmagie Logo" class="logo">
-        <h1>Schach-Magie</h1>
-      </div>
-      <nav class="menu">
+        <div>
+          <span class="brand-title">Schach-Magie</span>
+          <span class="brand-sub">Detmold</span>
+        </div>
+      </a>
+      <nav class="menu" aria-label="Hauptnavigation">
         <a href="#ueber-uns">Über uns</a>
         <a href="#termine">Termine</a>
+        <a href="#gallery">Galerie</a>
+        <a href="#team">Team</a>
         <a href="#kontakt">Kontakt</a>
-        <a href="#team">Team, Freunde & Partner</a>
-        <a href="#social-media">Social Media</a>
+        <a href="#social-media">Social</a>
       </nav>
+      <div class="nav-cta">
+        <span class="label-text">EST. 2024 • DETMOLD</span>
+        <a class="btn-primary small" href="#kontakt">Mitmachen</a>
+      </div>
     </div>
   </header>
 
-  <!-- Main -->
-  <main class="container">
-
-    <!-- Über uns -->
-    <section id="ueber-uns" class="section">
-      <div class="section-header">
-        <h2>Über uns</h2>
-      </div>
-      <div class="stack">
-        <p>Willkommen bei Schach-Magie!</p>
-        <p>Wir bieten wöchentliches Schachtraining für Schüler/innen zwischen 6 und 17 Jahren an. Das Training bei uns ist kostenlos, wir sind kein Verein und es herrscht eine lockere Atmosphäre ...</p>
-        <p>...schau doch einfach mal bei uns vorbei: Wir treffen uns jeden Freitag von 16 bis 18 Uhr im Cafe HerzStück (Krumme Str. 44).</p>
-      </div>
-    </section>
-
-    <!-- Termine -->
-    <section id="termine" class="section">
-      <div class="section-header">
-        <h2>Termine</h2>
-      </div>
-      <p>Unsere regelmäßigen Termine findest Du hier:</p>
-      <div class="event-list grid">
-        <article class="event-item card training-card card-7-10">
-          <div class="card-body stack-sm">
-            <h3 class="card-title">Training I (6 - 10 Jahre)</h3>
-            <p class="card-desc"><strong>Datum:</strong> Jeden Freitag</p>
-            <p class="card-desc"><strong>Uhrzeit:</strong> 16:00 - 17:00 Uhr</p>
-            <p class="card-desc"><strong>Ort:</strong> <a href="https://share.google/AejDvRrkg2ITcZvZz" target="_blank" rel="noopener noreferrer">Cafe Herzstück</a></p>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="label-text">Schachtraining für Kinder & Jugendliche</span>
+          <h1 class="display-xl hero-title">
+            <span class="line line-1">SCHACH</span>
+            <span class="plus-sign">+</span>
+            <span class="line line-2">MAGIE</span>
+            <span class="line line-3">DETMOLD</span>
+          </h1>
+          <p class="body-text hero-lead">
+            Willkommen bei Schach-Magie! Wir bieten wöchentliches Schachtraining für Schüler/innen
+            zwischen 6 und 17 Jahren an. Das Training ist kostenlos, wir sind kein Verein und die
+            Atmosphäre ist locker.
+          </p>
+          <div class="cta-row">
+            <a class="btn-primary" href="#termine">Trainingszeiten</a>
+            <a class="btn-ghost" href="#ueber-uns">So läuft's</a>
           </div>
-        </article>
-        <article class="event-item card training-card card-11-17">
-          <div class="card-body stack-sm">
-            <h3 class="card-title">Training II (10 - 17 Jahre)</h3>
-            <p class="card-desc"><strong>Datum:</strong> Jeden Freitag</p>
-            <p class="card-desc"><strong>Uhrzeit:</strong> 17:00 - 18:00</p>
-            <p class="card-desc"><strong>Ort:</strong> <a href="https://share.google/AejDvRrkg2ITcZvZz" target="_blank" rel="noopener noreferrer">Cafe Herzstück</a></p>
+          <div class="hero-badges">
+            <div class="badge-card">
+              <span class="badge-label">Freitag</span>
+              <span class="badge-value">16:00 - 18:00 Uhr</span>
+            </div>
+            <div class="badge-card alt">
+              <span class="badge-label">Ort</span>
+              <span class="badge-value">Cafe HerzStück</span>
+              <span class="badge-sub">Krumme Str. 44</span>
+            </div>
           </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Kontakt -->
-    <section id="kontakt" class="section">
-      <div class="section-header">
-        <h2>Kontakt</h2>
-      </div>
-      <p>Hast Du Fragen? Sende unserem Trainer-Team eine E-Mail oder kontaktiere uns telefonisch.</p>
-      <ul class="stack-sm">
-        <li><strong>E-Mail:</strong> <a href="mailto:schach-magie@web.de">Schach-Magie</a></li>
-        <li><strong>Telefon:</strong> +49(0)1757246357</li>
-      </ul>
-    </section>
-
-    <!-- Galerie -->
-    <section id="gallery" class="section">
-      <h2>Galerie</h2>
-      <div class="gallery-view" aria-live="polite">
-        <button class="nav prev" aria-label="Vorheriges Bild">‹</button>
-        <img id="gallery-main" src="" alt="Galerie Bild" loading="eager">
-        <button class="nav next" aria-label="Nächstes Bild">›</button>
-      </div>
-      <div class="gallery-thumbs" id="gallery-thumbs" role="list"></div>
-    </section>
-
-    <!-- Team -->
-    <section id="team" class="section">
-      <div class="section-header">
-        <h2>Trainer-Team, Freunde & Partner</h2>
-      </div>
-      <div class="team-grid grid">
-        <article class="member-card card">
-          <div class="card-media"><img src="Arnold.jpeg" alt="Arnold Essing"></div>
-          <div class="card-body stack-sm">
-            <h3 class="card-title">Arnold Essing</h3>
-            <p class="card-desc">Trainer</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="starburst doodle"></div>
+          <div class="flower doodle"></div>
+          <div class="floating-piece piece-1">
+            <img src="assets/pieces.png" alt="Schachfiguren">
           </div>
-        </article>
-        <article class="member-card card">
-          <div class="card-media"><img src="Karsten.jpg" alt="Karsten Sieg"></div>
-          <div class="card-body stack-sm">
-            <h3 class="card-title">Dr. Karsten Sieg</h3>
-            <p class="card-desc">Trainer</p>
+          <div class="floating-piece piece-2">N</div>
+          <div class="floating-piece piece-3">
+            <img src="assets/chessboard-chess-piece-chess-clock-chess-cf95eab6cbe0932420913e160b0c866f.png" alt="Schachfigur">
           </div>
-        </article>
-        <article class="member-card card">
-          <div class="card-media"><img src="Daniel.jpg" alt="Daniel R Hawes"></div>
-          <div class="card-body stack-sm">
-            <h3 class="card-title">Dr. Daniel Hawes</h3>
-            <p class="card-desc">Trainer</p>
-          </div>
-        </article>
+          <img src="Schachmagie0.jpg" alt="Schachtraining in Detmold" class="hero-photo">
+          <img src="placeholder_flyer_AE.png" alt="Schach-Magie Flyer" class="hero-flyer">
+        </div>
       </div>
-      <h3 class="stack-sm">Unsere Partner:</h3>
-      <ul class="stack-sm">
-        <li><a href="https://www.buergerstiftung-detmold.de/aktuelles/projektreihen/detmold-ist-bildung/schach-fuer-jugendliche/" target="_blank" rel="noopener noreferrer">Bürgerstiftung Detmold</a></li>
-        <li><a href="https://lipperfuerlipper.de/" target="_blank" rel="noopener noreferrer">Lipper für Lipper</a></li>
-        <li><a href="https://www.sf-lieme.de/" target="_blank" rel="noopener noreferrer">SF Lieme</a></li>
-        <li><a href="https://nilakayumova.de" target="_blank" rel="noopener noreferrer">Nila Kayumova</a></li>
-      </ul>
-    </section>
-
-    <!-- Social -->
-    <section id="social-media" class="section">
-      <div class="section-header">
-        <h2>Social Media</h2>
-      </div>
-      <p>Folge uns!</p>
-      <div class="social-links stack-sm">
-        <a href="https://www.facebook.com/BuergerstiftungDetmold/" class="social-icon facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="https://www.instagram.com/schach_magie.detmold/" class="social-icon instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <div class="container barcode-strip">
+        <div class="barcode"></div>
+        <div class="label-text">YOUTH TO THE CHESS BOARD</div>
+        <div class="logo-circle">SM</div>
       </div>
     </section>
 
+    <section id="ueber-uns" class="section" style="--delay: 0.1s;">
+      <div class="container section-grid">
+        <div class="section-title">
+          <span class="label-text">Über uns</span>
+          <h2>Schach, Freundschaft & Konzentration</h2>
+          <p class="body-text">
+            Wir treffen uns jeden Freitag von 16 bis 18 Uhr im Cafe HerzStück und geben Schachtraining
+            für verschiedene Altersgruppen. Anfänger/innen sind genauso willkommen wie Fortgeschrittene.
+          </p>
+        </div>
+        <div class="info-cards">
+          <article class="info-card">
+            <h3>Kostenlos & offen</h3>
+            <p>Schachtraining für Schüler/innen zwischen 6 und 17 Jahren, ohne Vereinsbindung.</p>
+          </article>
+          <article class="info-card highlight">
+            <h3>Locker & kreativ</h3>
+            <p>Eine entspannte Atmosphäre, in der alle Fragen erlaubt sind und Ideen zählen.</p>
+          </article>
+          <article class="info-card">
+            <h3>Gemeinschaft</h3>
+            <p>Freunde finden, gemeinsam spielen, voneinander lernen und Checkmate-Lächeln sammeln.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="termine" class="section" style="--delay: 0.2s;">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="label-text">Termine</span>
+            <h2>Unsere Trainingszeiten</h2>
+          </div>
+          <p class="body-text">Unsere regelmäßigen Termine findest du hier:</p>
+        </div>
+        <div class="event-grid">
+          <article class="event-card card-green">
+            <div class="card-top">
+              <span class="chip">Training I</span>
+              <span class="card-age">6 - 10 Jahre</span>
+            </div>
+            <h3>Freitag 16:00 - 17:00 Uhr</h3>
+            <p><strong>Ort:</strong> <a href="https://share.google/AejDvRrkg2ITcZvZz" target="_blank" rel="noopener noreferrer">Cafe HerzStück</a></p>
+          </article>
+          <article class="event-card card-berry">
+            <div class="card-top">
+              <span class="chip">Training II</span>
+              <span class="card-age">10 - 17 Jahre</span>
+            </div>
+            <h3>Freitag 17:00 - 18:00 Uhr</h3>
+            <p><strong>Ort:</strong> <a href="https://share.google/AejDvRrkg2ITcZvZz" target="_blank" rel="noopener noreferrer">Cafe HerzStück</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section" style="--delay: 0.25s;">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="label-text">Galerie</span>
+            <h2>Einblicke ins Training</h2>
+          </div>
+          <p class="body-text">Klick dich durch unsere liebsten Schachmomente.</p>
+        </div>
+        <div class="gallery-view" aria-live="polite">
+          <button class="nav prev" aria-label="Vorheriges Bild">‹</button>
+          <img id="gallery-main" src="" alt="Galerie Bild" loading="eager">
+          <button class="nav next" aria-label="Nächstes Bild">›</button>
+        </div>
+        <div class="gallery-thumbs" id="gallery-thumbs" role="list"></div>
+        <div class="gallery-fallback" aria-hidden="true">
+          <img src="placeholder_gallery1.png" alt="Schachtraining">
+          <img src="placeholder_gallery2.png" alt="Taktikübungen">
+          <img src="placeholder_gallery3.png" alt="Schach am Brett">
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="section" style="--delay: 0.3s;">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="label-text">Team</span>
+            <h2>Trainer-Team, Freunde & Partner</h2>
+          </div>
+          <p class="body-text">Unser Team begleitet euch durch Eröffnungen, Taktiken und Endspiele.</p>
+        </div>
+        <div class="team-grid">
+          <article class="member-card">
+            <div class="card-media"><img src="Arnold.jpeg" alt="Arnold Essing"></div>
+            <div class="card-body">
+              <h3>Arnold Essing</h3>
+              <p>Trainer</p>
+            </div>
+          </article>
+          <article class="member-card">
+            <div class="card-media"><img src="Karsten.jpg" alt="Karsten Sieg"></div>
+            <div class="card-body">
+              <h3>Dr. Karsten Sieg</h3>
+              <p>Trainer</p>
+            </div>
+          </article>
+          <article class="member-card">
+            <div class="card-media"><img src="Daniel.jpg" alt="Daniel R Hawes"></div>
+            <div class="card-body">
+              <h3>Dr. Daniel Hawes</h3>
+              <p>Trainer</p>
+            </div>
+          </article>
+        </div>
+        <div class="partners">
+          <h3>Unsere Partner</h3>
+          <ul class="partner-list">
+            <li><a href="https://www.buergerstiftung-detmold.de/aktuelles/projektreihen/detmold-ist-bildung/schach-fuer-jugendliche/" target="_blank" rel="noopener noreferrer">Bürgerstiftung Detmold</a></li>
+            <li><a href="https://lipperfuerlipper.de/" target="_blank" rel="noopener noreferrer">Lipper für Lipper</a></li>
+            <li><a href="https://www.sf-lieme.de/" target="_blank" rel="noopener noreferrer">SF Lieme</a></li>
+            <li><a href="https://nilakayumova.de" target="_blank" rel="noopener noreferrer">Nila Kayumova</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt" class="section" style="--delay: 0.35s;">
+      <div class="container contact-grid">
+        <div>
+          <span class="label-text">Kontakt</span>
+          <h2>Fragen? Schreib uns!</h2>
+          <p class="body-text">Sende unserem Trainer-Team eine E-Mail oder kontaktiere uns telefonisch.</p>
+        </div>
+        <div class="contact-card">
+          <div>
+            <p class="contact-label">E-Mail</p>
+            <a href="mailto:schach-magie@web.de">schach-magie@web.de</a>
+          </div>
+          <div>
+            <p class="contact-label">Telefon</p>
+            <a href="tel:+491757246357">+49 (0) 175 7246357</a>
+          </div>
+          <div>
+            <p class="contact-label">Adresse</p>
+            <p>Cafe HerzStück, Krumme Str. 44</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="social-media" class="section" style="--delay: 0.4s;">
+      <div class="container social-grid">
+        <div>
+          <span class="label-text">Social Media</span>
+          <h2>Folge uns</h2>
+        </div>
+        <div class="social-links">
+          <a class="social-card" href="https://www.facebook.com/BuergerstiftungDetmold/" target="_blank" rel="noopener noreferrer">
+            <span>Facebook</span>
+          </a>
+          <a class="social-card" href="https://www.instagram.com/schach_magie.detmold/" target="_blank" rel="noopener noreferrer">
+            <span>Instagram</span>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="container footer">
-    <p>&copy; 2025 Schach-Magie. Alle Rechte vorbehalten.</p>
-    <p><a href="https://github.com/schachmagie">Impressum</a> | <a href="https://www.bmi.bund.de/" target="_blank" rel="noopener noreferrer">Datenschutz</a></p>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <p>© 2025 Schach-Magie. Alle Rechte vorbehalten.</p>
+      <div class="footer-links">
+        <a href="https://github.com/schachmagie">Impressum</a>
+        <span>|</span>
+        <a href="https://www.bmi.bund.de/" target="_blank" rel="noopener noreferrer">Datenschutz</a>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
