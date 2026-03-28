@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/t",
+      "destination": "https://turnier.schachmagie.xyz",
+      "permanent": true
+    },
+    {
+      "source": "/t/",
+      "destination": "https://turnier.schachmagie.xyz",
+      "permanent": true
+    }
+  ]
+}
